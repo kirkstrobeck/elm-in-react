@@ -5,10 +5,10 @@ import Example from './example'
 export default class App extends Component {
   state = {
     title: 'Start!',
-    seconds: 0,
+    seconds: 0
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.setInterval(() => {
       this.setState(({ title, seconds }) => ({
         title: title === 'Hello' ? 'Goodbye' : 'Hello',
@@ -17,7 +17,7 @@ export default class App extends Component {
     }, 1000)
   }
 
-  render() {
+  render () {
     return <Example {...this.state} />
   }
 }
