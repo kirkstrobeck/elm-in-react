@@ -22,6 +22,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "nodemon": "^1.18.4",
     "react": "^16.4.2",
@@ -45,7 +46,7 @@
   "scripts": {
     "make": "webpack -d",
     "serve": "npm run make && http-server/bin/http-server -o -c-1",
-    "start": "webpack-dev-server --config webpack.dev.js"
+    "start": "webpack-dev-server --config config/webpack/dev.js"
   },
   "standard": {
     "parser": "babel-eslint"
