@@ -1,10 +1,9 @@
+const path = require('path')
+
 const exclude = [/elm-stuff/, /node_modules/]
 
 module.exports = {
-  mode: 'development',
-
   entry: './src/index.jsx',
-
   module: {
     rules: [
       {
@@ -18,14 +17,12 @@ module.exports = {
         loader: 'elm-webpack-loader'
       }
     ],
-
     noParse: /\.elm$/
   },
-
   output: {
-    filename: 'bundle.js'
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
-
   resolve: {
     extensions: ['.js', '.jsx', '.elm']
   }

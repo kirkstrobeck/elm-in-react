@@ -1,9 +1,10 @@
 {
-  "private": true,
-  "scripts": {
-    "make": "webpack -d",
-    "serve": "npm run make && http-server/bin/http-server -o -c-1",
-    "start": "webpack-dev-server --mode development"
+  "author": {
+    "name": "Contributors",
+    "url": "https://github.com/kirkstrobeck/elm-in-react/graphs/contributors"
+  },
+  "bugs": {
+    "url": "https://github.com/kirkstrobeck/elm-in-react/issues"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
@@ -12,9 +13,17 @@
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "elm": "~0.18",
     "elm-format": "^0.8.0",
     "elm-webpack-loader": "^4.5.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
     "http-server": "^0.11.1",
+    "nodemon": "^1.18.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-elm-components": "^1.0.2",
@@ -23,15 +32,23 @@
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "elm": "~0.18"
+    "webpack-merge": "^4.1.4"
+  },
+  "description": "Elm in React example",
+  "homepage": "https://github.com/kirkstrobeck/elm-in-react",
+  "license": "Apache-2.0",
+  "name": "elm-in-react",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kirkstrobeck/elm-in-react.git"
+  },
+  "scripts": {
+    "make": "webpack -d",
+    "serve": "npm run make && http-server/bin/http-server -o -c-1",
+    "start": "webpack-dev-server --config webpack.dev.js"
   },
   "standard": {
     "parser": "babel-eslint"
-  }
+  },
+  "version": "0.0.1"
 }
