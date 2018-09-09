@@ -1,9 +1,9 @@
-const exclude = [/elm-stuff/, /node_modules/];
+const exclude = [/elm-stuff/, /node_modules/]
 
 module.exports = {
   mode: 'development',
 
-  entry: './lib/index.jsx',
+  entry: './src/index.jsx',
 
   module: {
     rules: [
@@ -28,5 +28,5 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.elm']
-  },
+  }
 }
