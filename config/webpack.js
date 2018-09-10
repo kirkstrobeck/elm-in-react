@@ -53,23 +53,23 @@ const common = {
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.elm']
-  },
-  externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react',
-      umd: 'react'
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom',
-      umd: 'react-dom'
-    }
   }
+  // externals: {
+  //   react: {
+  //     root: 'React',
+  //     commonjs2: 'react',
+  //     commonjs: 'react',
+  //     amd: 'react',
+  //     umd: 'react'
+  //   },
+  //   'react-dom': {
+  //     root: 'ReactDOM',
+  //     commonjs2: 'react-dom',
+  //     commonjs: 'react-dom',
+  //     amd: 'react-dom',
+  //     umd: 'react-dom'
+  //   }
+  // }
 }
 
 module.exports = merge(
@@ -80,8 +80,8 @@ module.exports = merge(
         plugins: [
           new webpack.DefinePlugin({
             'process.env.PRODUCTION': JSON.stringify(PRODUCTION)
-          }),
-          new BundleAnalyzerPlugin()
+          })
+          // new BundleAnalyzerPlugin()
         ],
         optimization: {
           minimizer: [
