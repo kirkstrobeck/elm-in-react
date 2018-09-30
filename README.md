@@ -1,6 +1,6 @@
 # Elm in React
 
-Goal: Make a stateless functional component in React that is strictly Elm.
+Goal: Make a simple component in React that is strictly Elm.
 
 ```
 yarn

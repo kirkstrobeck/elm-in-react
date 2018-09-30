@@ -7,13 +7,24 @@ export default class ElmWrapper extends Component {
   }
 
   render () {
-    const { src, props } = this.props
+    const { src, props, listeners = {} } = this.props
     return (
       <Elm
         src={src}
         flags={props}
         ports={ports => {
-          this.send = ports.state.send
+          this.send = ports.reactToElm.send
+
+          if (listeners) {
+            ports.elmToReact.subscribe(({ command, payload }) => {
+              Object.keys(listeners).forEach(listener => {
+                const func = listeners[listener]
+                if (func && command === listener) {
+                  func(payload)
+                }
+              })
+            })
+          }
         }}
       />
     )
