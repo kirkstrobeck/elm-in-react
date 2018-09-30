@@ -3,6 +3,10 @@ import React, { Component } from 'react'
 import { App as ElmApp } from './index.elm'
 import ElmWrapper from '../helpers/elm-wrapper'
 
+function windowAlert (message) {
+  window.alert(message)
+}
+
 export default class App extends Component {
   state = {
     title: 'Start!',
@@ -10,7 +14,7 @@ export default class App extends Component {
   }
 
   componentDidMount () {
-    window.setInterval(() => {
+    this.interval = window.setInterval(() => {
       this.setState(({ title, seconds }) => ({
         title: title === 'Hello' ? 'Goodbye' : 'Hello',
         seconds: seconds + 1
@@ -18,8 +22,8 @@ export default class App extends Component {
     }, 1000)
   }
 
-  add100 = () => {
-    this.setState(({ seconds }) => ({ seconds: seconds + 100 }))
+  componentDidUnmount () {
+    window.clearInterval(this.interval)
   }
 
   render () {
@@ -27,7 +31,9 @@ export default class App extends Component {
       <ElmWrapper
         src={ElmApp}
         props={this.state}
-        listeners={{ add100: this.add100 }}
+        listeners={{
+          alert: windowAlert
+        }}
       />
     )
   }

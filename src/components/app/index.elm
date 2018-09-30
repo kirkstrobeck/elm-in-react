@@ -56,6 +56,10 @@ subscriptions model =
     reactToElm ReactUpdate
 
 
+alertMessage seconds =
+    toString seconds ++ " seconds have passed"
+
+
 view : Model -> Html Msg
 view { title, seconds } =
     div []
@@ -66,8 +70,8 @@ view { title, seconds } =
         , button
             [ onClick
                 (ElmToReactSender
-                    (ElmToReactMsg "add100" "")
+                    (ElmToReactMsg "alert" (alertMessage seconds))
                 )
             ]
-            [ text "Add 100" ]
+            [ text "Alert elapsed time" ]
         ]
