@@ -41,7 +41,7 @@
   "description": "Elm in React example",
   "homepage": "https://github.com/kirkstrobeck/elm-in-react",
   "license": "Apache-2.0",
-  "name": "elm-in-react",
+  "name": "Elm in React",
   "repository": {
     "type": "git",
     "url": "git@github.com:kirkstrobeck/elm-in-react.git"
